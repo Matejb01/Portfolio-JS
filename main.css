@@ -1,0 +1,1054 @@
+:root {
+    --black: #000;
+    --font: 'Roboto', sans-serif;
+    --lightGrey: #919191;
+    --lightRed: #F34338;
+    --me: url(./assets/me.jpeg);
+    --offWhite: #e7e7e7;
+    --panelBorderBlue: #000418;
+    --portfolioLeftBGColor: #ECECEE;
+    --textColor: #1F1F21;
+    --textWhite: #FFF;
+}
+/* ------------------------------------------------------------------- */
+/* portfolio */
+
+#portfolioLeft {
+    background-color: var(--portfolioLeftBGColor);
+    color: var(--textColor);
+    font-family: var(--font);
+    height: 100vh;
+    justify-content: space-between;
+    width: 39vw;
+}
+
+#portfolioRight {
+    color: var(--textColor);
+    font-family: var(--font);
+    height: 100vh;
+    width: 61vw;
+}
+
+#rightSideText {
+    font-size: 68px;
+    font-weight: 200;
+    letter-spacing: 10px;
+    margin: 100px;
+    opacity: 0.6;
+}
+
+#userPic {
+    background-blend-mode: luminosity;
+    background-color: var(--black);
+    background-image: var(--me);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 322px;
+    margin: 28px;
+    width: 246px;
+}
+
+#skillsSection {
+    margin-top: 48px;
+    margin: 28px;
+    width: 246px;
+}
+
+#imageSection {
+    height: 100%;
+    text-align: justify;
+}
+
+#rotatedSection {
+    height: 119px;
+    left: 119px;
+    position: absolute;
+    top: 0px;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+    width: 100vh;
+}
+
+#rotatedText {
+    align-items: end;
+    border-top: 1px solid #cdcdcd;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    font-size: 34px;
+    font-weight: 600;
+    padding: 14px 30px;
+    transform: rotate(180deg);
+}
+
+#pens {
+    background-image: url(./assets/pens.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 500px;
+}
+
+/* ------------------------------------------------------------------- */
+
+body {
+    color: var(--textWhite);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#name {
+    color: var(--lightRed);
+    font-weight: bold;
+}
+
+#dashboard {
+    backdrop-filter: blur(5px);
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow-y: scroll;
+    position: absolute;
+    right: 0;
+    transition: 1s;
+    width: 23.5em;
+}
+
+[offscreen] {
+    right: -24em !important;
+}
+
+.panelSm {
+    border-radius: 2px;
+    float: left;
+    height: 11rem;
+    margin: 4px;
+    overflow: hidden;
+    width: 11.25rem;
+}
+
+.panelMd {
+    border-radius: 2px;
+    float: left;
+    height: 11rem;
+    margin: 4px;
+    overflow: hidden;
+    width: 23rem;
+}
+
+.panelLarge {
+    border-radius: 2px;
+    float: left;
+    height: 23rem;
+    margin: 4px;
+    overflow: hidden;
+    width: 23rem;
+}
+
+[nodisplay]{
+    display: none !important;
+}
+
+[relative]{
+    position: relative !important;
+}
+
+#projectBtn {
+    color: #fff;
+    font-weight: 200;
+    margin-right: 28px;
+    width: 222px;
+}
+
+.grey {
+    background: rgb(26,28,30);
+    background: linear-gradient(0deg, rgba(26,28,30,1) 0%, rgba(44,48,52,1) 48%, rgba(53,57,59,1) 100%);
+}
+
+.blue {
+    background: rgb(3,11,33);
+    background: linear-gradient(180deg, rgba(3,11,33,1) 0%, rgba(30,36,42,1) 48%, rgba(47,53,68,1) 100%);
+}
+
+.directionsSm {
+    background-color: var(--black);
+    height: 154px;
+    left: 0px;
+    padding: 12px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 154px;
+}
+
+.directionsSm[opacity] {
+    opacity: 0.8;
+}
+
+.flex {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.flexCol {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.alignStart {
+    align-items: flex-start;
+}
+
+.alignEnd {
+    align-items: flex-end;
+}
+
+.justifyStart {
+    justify-content: flex-start;
+}
+
+.justifyEnd {
+    justify-content: flex-end;
+}
+
+.fullSize {
+    height: 100%;
+    width: 100%;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.sizeWithHeader {
+    height: 86%;
+    width: 100%;
+}
+
+.topBottomHalf {
+    height: 50%;
+    width: 100%;
+}
+
+.rightLeftHalf {
+    height: 100%;
+    width: 50%;
+}
+
+.half70 {
+    height: 100%;
+    width: 70%;
+}
+
+.half30 {
+    height: 100%;
+    width: 30%;
+}
+
+.quarterWidth {
+    height: 100%;
+    width: 25%;
+}
+
+.fontSmSize {
+    font-size: 12px;
+}
+
+.fontMidSize {
+    font-size: 31px;
+}
+
+.panelTitle {
+    height: 30%;
+    width: 100%;
+}
+
+.panelBody {
+    height: 70%;
+    width: 100%;
+}
+
+.margin {
+    margin: 14px;
+}
+
+.sideMargin {
+    margin: 0 14px;
+}
+
+.topBottomMargin {
+    margin: 14px 0;
+}
+
+.redText {
+    color: var(--lightRed);
+}
+
+.greyText {
+    color: var(--lightGrey);
+}
+
+.btn {
+    background-color: var(--black);
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 5px 0;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.panelHeader {
+    color: var(--lightRed);
+    font-weight: 800;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.upperCase {
+    text-transform: uppercase;
+}
+
+.line {
+    background-color: var(--lightGrey);
+    height: 1px;
+    opacity: 0.2;
+    width: 90%;
+}
+
+input[type=text], select {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    padding: 12px 20px;
+    width: 100%;
+}
+  
+input[type=submit] {
+    background-color: #4CAF50;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 8px 0;
+    padding: 14px 20px;
+    width: 100%;
+}
+  
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.displayNone {
+    display: none;
+}
+
+input[type=text].smallInput,
+input[type=number].smallInput {
+    height: 26px;
+    padding: 6px;
+    width: 78px;
+}
+
+/* ------------------------------------------------------------------- */
+/* video player */
+
+#vidoePlayer {
+    position: relative;
+}
+
+#myVideo {
+    width: 100%;
+}
+
+#videoOverLay {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 28px;
+    font-weight: 100;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------------- */
+/* password generator */
+
+#passwordGeneratorApp {
+    align-items: flex-start;
+    padding: 12px;
+}
+
+#passwordImg {
+    background-image: url(./assets/password.png);
+    background-size: contain;
+    height: 83px;
+    margin: 8px;
+    opacity: 0.7;
+    width: 330px;
+}
+
+#passwordBtn,
+#generatePasswordBtn {
+    width: 87%;
+}
+
+.pwOptions {
+    font-size: 14px;
+    margin: 3px;
+}
+
+/* ------------------------------------------------------------------- */
+/* daily affirmation */
+/* #dailyMemo {} */
+
+/* #dailyMemoDay {} */
+
+#dailyInspirationalQuote {
+    color: var(--lightGrey);
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#dailyMemoTop {
+    width: 100%;
+}
+
+#dailyMemoBottom {
+    height: 60%;
+}
+
+/* ------------------------------------------------------------------- */
+/* memory game */
+
+#mgGameHome {
+    background-image: url(./assets/memory.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#memoryTitle {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--offWhite);
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#mgTopLeft {
+    border-bottom: 1px solid var(--panelBorderBlue);
+    border-right: 1px solid var(--panelBorderBlue);
+}
+
+#mgBottomRight {
+    border-left: 1px solid var(--panelBorderBlue);
+    border-top: 1px solid var(--panelBorderBlue);
+}
+
+#mgStartBtn {
+    margin-right: 16px;
+}
+
+#mgStartBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#mgCount {
+    font-size: 2em;
+    position: absolute;
+}
+
+.memoryHighlight {
+    background-color: rgb(0 247 190 / 60%);
+}
+
+.mgSquare.playerClick {
+    background-color: rgb(0 247 190 / 60%);
+}
+
+.mgSquare.cpuClick {
+    background-color: rgb(0 76 247 / 60%)
+}
+
+.mgSquare:active {
+    background-color: rgb(0 247 190 / 20%);
+}
+
+/* ------------------------------------------------------------------- */
+/* tiktactoe */
+
+#TikTacToeHome {
+    background-image: url(./assets/tictactoe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#topRow,
+#middleRow,
+#bottomRow {
+    height: 33%;
+    width: 100%;
+}
+
+#topRow,
+#middleRow {
+    border-bottom: 1px solid var(--panelBorderBlue);
+}
+
+#tikTacToeBoard > #topRow > div,
+#tikTacToeBoard > #middleRow > div,
+#tikTacToeBoard > #bottomRow > div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    height: 100%;
+    width: 33%;
+}
+
+.topOne,
+.topTwo,
+.middleOne,
+.middleTwo,
+.bottomOne,
+.bottomTwo {
+    border-right: 1px solid var(--panelBorderBlue);
+}
+
+.tictactoe.x {
+    background-image: url(./assets/x.png);
+}
+
+.tictactoe.o {
+    background-image: url(./assets/o.png);
+}
+
+/* ------------------------------------------------------------------- */
+/* Whac-A-Mole */
+
+#whacAMoleBoard > #topRow > div,
+#whacAMoleBoard > #middleRow > div,
+#whacAMoleBoard > #bottomRow > div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 100%;
+    width: 33%;
+}
+
+#whacAMoleBoard {
+    cursor: url(./assets/mallet.cur), grab;
+    position: relative;
+}
+
+#whakAMoleHome{
+    background-image: url(./assets/whackamolehome.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+}
+
+#whakamoleTitle p {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--offWhite);
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.whacAMole.dirt {
+    background-image: url(./assets/dirt.png);
+}
+
+.whacAMole.mole {
+    background-image: url(./assets/mole.png);
+}
+
+.whacAMole.hitMole {
+    background-color: #600000;
+}
+
+#whacAMoleCount,
+#whacAMoleCountDown {
+    font-size: 2em;
+    pointer-events: none;
+    position: absolute;
+}
+
+#whacAMoleCountDown {
+    font-size: 1em;
+    left: 0;
+    top: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/* game settings */
+
+#gameSettings {
+    margin-left: 12px;
+}
+
+#statsImg {
+    background-image: url(./assets/stats.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 100px;
+    width: 112px;
+}
+
+/* ------------------------------------------------------------------- */
+/* clock */
+
+#clock {
+    color: #6ac1ff;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 41px;
+}
+
+/* ------------------------------------------------------------------- */
+/* meditation app */
+
+#meditationApp {
+    background-image: url(./assets/meditation.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+#meditationApp:active {
+    opacity: 0.4;
+}
+
+#meditationStart {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-weight: 900;
+    padding: 3px;
+    z-index: 1;
+}
+
+#breatheIn,
+#breatheOut {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    position: absolute;
+    top: 60px;
+    width: 100px;
+    z-index: 0;
+}
+
+#breatheIn {
+    background-image: url(./assets/inhale.png);
+}
+
+#breatheOut {
+    background-image: url(./assets/exhale.png);
+}
+
+/* ------------------------------------------------------------------- */
+/* tip calculator */
+
+#tipCalculator > div > div > .tipInput {
+    margin: 3px;
+    padding: 6px;
+    width: 90px;
+}
+
+#splitAmountSection {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 18px;
+}
+
+/* ------------------------------------------------------------------- */
+/* crud store */
+
+#pricedItems {
+    background-image: url(./assets/shelf.png);
+    background-position: 0px -39px;
+    background-repeat: no-repeat;
+    background-size: 100% 87%;
+}
+
+.priceText {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#storeHeader {
+    justify-content: space-between;
+}
+
+#storeHeader input {
+    margin: 12px 14px 0 0;
+    width: 200px;
+}
+
+#chips,
+#juice,
+#sandwich,
+#apple,
+#selectedProduct,
+.shelfedProduct {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50%;
+    width: 50%;
+}
+
+#chips:active,
+#juice:active,
+#sandwich:active,
+#apple:active {
+    opacity: 0.4;
+}
+
+#chips {
+    background-image: url(./assets/chips.png);
+}
+
+#juice {
+    background-image: url(./assets/juice.png);
+}
+
+#sandwich {
+    background-image: url(./assets/sandwich.png);
+}
+
+#apple {
+    background-image: url(./assets/apple.png);
+}
+
+#selectedProduct,
+.shelfedProduct {
+    height: 40%;
+    width: 40%;
+}
+
+#productHelpText {
+    padding: 14px;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------- */
+/* breaking bad quotes */
+
+#breakingBadApp {
+    position: relative;
+}
+
+#breakingBadImg {
+    background-image: url(./assets/breakingBad.jpg);
+    background-position: 55px -56px;
+    background-size: cover;
+}
+
+#quote {
+    background-image: url(./assets/quote.png);
+    background-position: center center;
+    background-size: cover;
+    height: 166px;
+    left: 11px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 3px;
+    width: 213px;
+}
+
+#quoteTextContainer {
+    font-size: 12px;
+    height: 57%;
+    left: 16px;
+    position: relative;
+    top: 24px;
+    width: 84%;
+}
+
+#quoteTextContainer:active {
+    opacity: 0.2;
+}
+
+#breakingBadAuthor {
+    color: #002d00;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#breakBadClick {
+    font-weight: 900;
+    left: 33px;
+    top: 109px;
+}
+
+/* ------------------------------------------------------------------- */
+/* Color Psychology */
+
+#colorPsychology {
+    background-image: url(./assets/colorsbg.png);
+    background-size: cover;
+    flex-wrap: wrap;
+    overflow: scroll;
+    padding: 2px;
+}
+
+#colorPsychology .btn {
+    margin: 2px;
+}
+
+#colorPsychology .btn:hover {
+    opacity: 0.6;
+}
+
+.cpRed {
+    background-color: #E91D2B;
+}
+
+.cpOrange {
+    background-color: #F4891E;
+}
+
+.cpYellow {
+    background-color: #E9CF2A;
+}
+
+.cpGreen {
+    background-color: #0CA450;
+}
+
+.cpBlue {
+    background-color: #44A0E3;
+}
+
+.cpPink {
+    background-color: #D80A91;
+}
+
+.cpPurple {
+    background-color: #693698;
+}
+
+.cpBrown {
+    background-color: #6C330D;
+}
+
+.cpBlack {
+    background-color: #101114;
+}
+
+.cpWhite {
+    background-color: #FFFFFF;
+    color: #101114;
+}
+
+/* ------------------------------------------------------------------- */
+/* pokedex */
+
+#pokedexApp {
+    background-image: url(./assets/pokedex.png);
+    background-size: cover;
+    font-family: 'Inconsolata', monospace;
+    position: relative;
+}
+
+#pokemonSearch {
+    left: 107px;
+    position: relative;
+    top: 19px;
+    width: 160px;
+}
+
+#pokemonInfo {
+    bottom: 50px;
+    height: 63%;
+    justify-content: space-between;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#pokemonStats {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 71px;
+    width: 100%;
+}
+
+.statRow {
+    margin: 0 8px;
+}
+
+#pokemon {
+    background-image: url(./assets/egg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 154px;
+    position: relative;
+    top: 30px;
+    width: 154px;
+}
+
+/* ------------------------------------------------------------------- */
+/* random jokes */
+
+#jokeApp {
+    background-image: url(./assets/laugh.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    padding-left: 12px;
+    padding-top: 12px;
+    width: 360px;
+}
+
+#jokeApp:active {
+    opacity: 0.2;
+}
+
+#joke {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#jokeClick {
+    font-weight: 900;
+}
+
+/* ------------------------------------------------------------------- */
+/* fighting game */
+
+#fightingRing {
+    height: 100%;
+    width: 100%;
+    background-image: url(./assets/battleground.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #090844;
+}
+
+#fighterStats {
+    height: 33%;
+    width: 100%;
+}
+
+#battleField {
+    height: 66%;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+#fighterOne {
+    background-image: url(./assets/attackOne.png);
+    background-position: 0px;
+    background-size: auto 100%;
+}
+
+#fighterTwo {
+    background-image: url(./assets/attackTwo.png);
+    background-position: 0px;
+    background-size: auto 100%;
+    transform: rotateY(180deg);
+}
+
+#fighterTwo span {
+    transform: rotateY(180deg);
+}
+
+.fighter {
+    height: 200px;
+    width: 160px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: relative;
+    left: 0;
+    justify-content: center;
+    align-items: start;
+}
+
+#fighterOne.attack {
+    left: 120px;
+}
+
+#fighterTwo.attack {
+    left: -120px;
+}
+
+#fighterOne.miss {
+    left: -20px;
+}
+
+#fighterTwo.miss {
+    left: 20px;
+}
+
+#fighterOne.fighterHit {
+    background-image: url(./assets/hurtOne.png);
+    opacity: 0.5;
+    height: 150px;
+}
+
+#fighterTwo.fighterHit {
+    background-image: url(./assets/hurtTwo.png);
+    opacity: 0.5;
+    height: 150px;
+}
+
+#fighterStats {
+    justify-content: space-between;
+}
+
+#fighterOneStats,
+#fighterTwoStats {
+    padding: 10px;
+}
+
+.statInputSection {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.statInput {
+    height: 20px;
+    width: 38px;
+    padding: 4px;
+    margin-left: 6px;
+}
+
+#battleBtn {
+    background-color: #2c1280;
+    padding: 10px;
+    border: 1px solid #fff;
+    user-select: none;
+}
+
+#battleBtn:hover {
+    opacity: 0.6;
+}
+
+#battleBtn:active {
+    opacity: 1;
+}

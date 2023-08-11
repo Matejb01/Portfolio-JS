@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Portfolio Matej Bahmec</title>
+</head>
+<body>
+    <div id="portfolioLeft" class="flex">
+        <div id="nameSection">
+            <div id="rotatedSection">
+                <div id="rotatedText">
+                    <p>Portfolio</p>
+                    <p>Matej Bahmec</p>
+                </div>
+            </div>
+        </div>
+        <div id="imageSection" class="flexCol alignEnd justifyStart">
+            <div id="userPic"></div>
+            <div id="skillsSection">
+                <p>Hi, My name is Matej. I am a motivated third-year computer science student at Zagreb University of Applied Sciences, with 
+                    a major in office organization and informatization. I've also completed few programming courses on Udemy. One of them is JavaScript course 
+                    and here you can see projects that I've done in the course. 
+                </p>
+            </div>
+            <div id="projectBtn" class="btn" onclick="toggleProjects()">Show Projects</div>
+        </div>
+    </div>
+    <div id="portfolioRight">
+        <div id="rightSideText">SIM·PLIS·TIC</div>
+        <div id="pens"></div>
+    </div>
+
+    <div id="dashboard" offscreen>
+
+        <!-- video player -->
+        <div class="panelMd">
+            <div id="vidoePlayer" class="fullSize">
+                <video autoplay muted loop id="myVideo">
+                    <source src="./assets/Ink - 67358.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div id="videoOverLay" class="flex">ENJOY</div>
+            </div>
+        </div>
+
+        <!-- password generator -->
+        <div class="panelLarge grey">
+            <div class="fullSize">
+                <p class="panelHeader">Password Generator</p>
+                <div id="passwordGeneratorApp" class="flexCol justifyStart alignStart sizeWithHeader">
+                    <div id="passwordImg"></div>
+                    <div id="passwordBtn" class="btn redText" onclick="copyPassword()">your password</div>
+                    <div id="generatePasswordBtn" class="btn" onclick="generatePassword()">Generate Password</div>
+                    <div class="pwOptions flex">
+                        <input id="upperCaseLettersCheckbox" type="checkbox"> Use: ABCDEFGHIJKLMNOPQRSTUVWXYZ &nbsp;<span id="upperCaseLetters"></span>
+                    </div>
+                    <div class="pwOptions flex">
+                        <input id="lowerCaseLettersCheckbox" type="checkbox"> Use: abcdefghijklmnopqrstuwxyz &nbsp;<span id="lowerCaseLetters"></span>
+                    </div>
+                    <div class="pwOptions flex">
+                        <input id="passwordNumbersCheckbox" type="checkbox"> Use: 123456789 &nbsp;<span id="passwordNumbers"></span>
+                    </div>
+                    <div class="pwOptions flex">
+                        <input id="specialCharactersCheckbox" type="checkbox"> Use: !@#$%^&*() &nbsp;<span id="specialCharacters"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- inspirational quote calendar -->
+        <div class="panelSm grey">
+            <div id="dailyMemo" class="flexCol fullSize">
+                <div id="dailyMemoTop" class="flex">
+                    <div class="rightLeftHalf flexCol">
+                        <div id="dailyMemoDay" class="panelTitle fontSmSize flex alignEnd redText">SUNDAY</div>
+                        <div id="dailyMemoDateNumber" class="panelBody fontMidSize flex alignStart">25</div>
+                    </div>
+                    <div class="rightLeftHalf flex"></div>
+                </div>
+                <div id="dailyMemoBottom">
+                    <div id="dailyInspirationalQuote" class="fontSmSize sideMargin">
+                        <p id="inspirationalQuote" class="topBottomMargin"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- memory square game -->
+        <div relative class="panelSm blue">
+            <div nodisplay id="mgBoard" class="flexCol fullSize">
+                <div class="topBottomHalf flex">
+                    <!-- class used to highlight: memoryHighlight -->
+                    <div
+                        id="mgTopLeft"
+                        class="mgSquare rightLeftHalf flexCol"
+                        onmousemove="addHighlight('mgTopLeft')"
+                        onmouseleave="removeHighlight('mgTopLeft')"
+                        onclick="makeMemoryGuess('mgTopLeft')"
+                    ></div>
+                    <div
+                        id="mgTopRight"
+                        class="mgSquare rightLeftHalf flex"
+                        onmousemove="addHighlight('mgTopRight')"
+                        onmouseleave="removeHighlight('mgTopRight')"
+                        onclick="makeMemoryGuess('mgTopRight')"
+                    ></div>
+                </div>
+                <span id="mgCount">0</span>
+                <div class="topBottomHalf flex">
+                    <div
+                        id="mgBottomLeft"
+                        class="mgSquare rightLeftHalf flexCol"
+                        onmousemove="addHighlight('mgBottomLeft')"
+                        onmouseleave="removeHighlight('mgBottomLeft')"
+                        onclick="makeMemoryGuess('mgBottomLeft')"
+                    ></div>
+                    <div
+                        id="mgBottomRight"
+                        class="mgSquare rightLeftHalf flex"
+                        onmousemove="addHighlight('mgBottomRight')"
+                        onmouseleave="removeHighlight('mgBottomRight')"
+                        onclick="makeMemoryGuess('mgBottomRight')"
+                    ></div>
+                </div>
+            </div>
+            <div id="mgHomeScreen" class="flexCol fullSize">
+                <div id="mgGameHome" class="flexCol fullSize">
+                    <div class="topBottomHalf flex">
+                        <div class="rightLeftHalf flexCol">
+                            <div class="panelTitle fontSmSize flex alignEnd redText">HS</div>
+                            <div id="mgHighScore" class="panelBody fontMidSize flex alignStart">0</div>
+                        </div>
+                        <div class="rightLeftHalf flex">
+                            <div id="mgStartBtn" class="btn" onclick="showMGDirections()">START</div>
+                        </div>
+                    </div>
+                    <div class="topBottomHalf">
+                        <div id="memoryTitle" class="sideMargin">
+                            <p>Memory Game</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div nodisplay onclick="memoryGameStart()" id="mgDirections" class="directionsSm flex">Select the sequence of highlighted boxes each round. Click to play!</div>
+        </div>
+
+        <!-- tiktactoe -->
+        <div relative class="panelSm blue">
+            <div nodisplay id="tikTacToeBoard" class="flexCol fullSize">
+                <div id="topRow" class="flex">
+                    <div
+                        id="1"
+                        onclick="selectSquare('1')"
+                        class="tictactoe topOne"></div>
+                    <div
+                        id="2"
+                        onclick="selectSquare('2')"
+                        class="tictactoe topTwo"></div>
+                    <div
+                        id="3"
+                        onclick="selectSquare('3')"
+                        class="tictactoe topThree"></div>
+                </div>
+                <div id="middleRow" class="flex">
+                    <div
+                        id="4"
+                        onclick="selectSquare('4')"
+                        class="tictactoe middleOne"></div>
+                    <div
+                        id="5"
+                        onclick="selectSquare('5')"
+                        class="tictactoe middleTwo"></div>
+                    <div
+                        id="6"
+                        onclick="selectSquare('6')"
+                        class="tictactoe middleThree"></div>
+                </div>
+                <div id="bottomRow" class="flex">
+                    <div
+                        id="7"
+                        onclick="selectSquare('7')"
+                        class="tictactoe bottomOne"></div>
+                    <div
+                        id="8"
+                        onclick="selectSquare('8')"
+                        class="tictactoe bottomTwo"></div>
+                    <div
+                        id="9"
+                        onclick="selectSquare('9')"
+                        class="tictactoe bottomThree"></div>
+                </div>
+            </div>
+            <div id="tikTacToeHome" class="flexCol fullSize">
+                <div id="TikTacToeHome" class="flexCol fullSize">
+                    <div class="topBottomHalf flex">
+                        <div class="rightLeftHalf flexCol">
+                            <div class="panelTitle fontSmSize flex alignEnd redText">W/L</div>
+                            <div id="tictactoeScore" class="panelBody fontMidSize flex alignStart">8/6</div>
+                        </div>
+                        <div class="rightLeftHalf flex">
+                            <div
+                                id="mgStartBtn"
+                                class="btn"
+                                onclick="showDirections()">START</div>
+                        </div>
+                    </div>
+                    <div class="topBottomHalf">
+                        <div id="memoryTitle" class="sideMargin">
+                            <p class="flex">Tic Tac Toe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                nodisplay
+                onclick="startGame()"
+                id="gameDirections"
+                class="directionsSm flex">
+            First to score three in a row wins. Click to play!</div>
+        </div>
+
+        <!-- whakAMole -->
+        <div relative class="panelSm blue">
+            <div nodisplay id="whacAMoleBoard" class="flexCol fullSize">
+                <div id="topRow" class="flex">
+                    <div class="whacAMole topOne dirt" onclick="whacMole('topOne')"></div>
+                    <div class="whacAMole topTwo dirt" onclick="whacMole('topTwo')"></div>
+                    <div class="whacAMole topThree dirt" onclick="whacMole('topThree')"></div>
+                </div>
+                <span id="whacAMoleCount">0</span>
+                <span id="whacAMoleCountDown">0</span>
+                <div id="middleRow" class="flex">
+                    <div class="whacAMole middleOne dirt" onclick="whacMole('middleOne')"></div>
+                    <div class="whacAMole middleTwo dirt mole" onclick="whacMole('middleTwo')"></div>
+                    <div class="whacAMole middleThree dirt" onclick="whacMole('middleThree')"></div>
+                </div>
+                <div id="bottomRow" class="flex">
+                    <div class="whacAMole bottomOne dirt" onclick="whacMole('bottomOne')"></div>
+                    <div class="whacAMole bottomTwo dirt" onclick="whacMole('bottomTwo')"></div>
+                    <div class="whacAMole bottomThree dirt" onclick="whacMole('bottomThree')"></div>
+                </div>
+            </div>
+            <div id="whakAMoleHome" class="flexCol fullSize">
+                <div class="flexCol fullSize">
+                    <div class="topBottomHalf flex">
+                        <div class="rightLeftHalf flexCol">
+                            <div class="panelTitle fontSmSize flex alignEnd redText">HS</div>
+                            <div id="whakamoleScore" class="panelBody fontMidSize flex alignStart">12</div>
+                        </div>
+                        <div class="rightLeftHalf flex">
+                            <div id="mgStartBtn" class="btn" onclick="whacAMoleMenuStart()">START</div>
+                        </div>
+                    </div>
+                    <div class="topBottomHalf">
+                        <div id="whakamoleTitle" class="sideMargin">
+                            <p>Whak A Mole</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                nodisplay
+                onclick="whacAMoleStart()"
+                id="whacAMoleDirections"
+                class="directionsSm flex">
+            </div>
+        </div>
+
+        <!-- game settings -->
+        <div class="panelMd grey">
+            <div class="fullSize">
+                <p class="panelHeader">Game Score Settings</p>
+                <div id="gameSettings" class="flex sizeWithHeader">
+                    <div class="flexCol alignStart">
+                        <div><input id="mgReset" type="checkbox"> Memory Game</div>
+                        <div><input id="tttReset" type="checkbox"> Tik Tac Toe</div>
+                        <div><input id="wamReset" type="checkbox"> Whak A Mole</div>
+                        <div id="GameResetBtn" class="btn" onclick="resetScores()">Reset Score(s)</div>
+                    </div>
+                    <div id="statsImg"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- oop game -->
+        <div class="panelLarge">
+            <div id="fightingRing" class="flexCol">
+                <div id="fighterStats" class="flex">
+                    <div id="fighterOneStats">
+                        <div class="statInputSection">
+                            ATK <input id="fOneAtk" class="statInput" type="number" onkeyup="restrictValue('fOneAtk')" value="40">
+                        </div>
+                        <div class="statInputSection">
+                            DEF <input id="fOneDef" class="statInput" type="number" onkeyup="restrictValue('fOneDef')" value="30">
+                        </div>
+                        <div class="statInputSection">
+                            SPD <input id="fOneSpd" class="statInput" type="number" onkeyup="restrictValue('fOneSpd')" value="30">
+                        </div>
+                    </div>
+                    <div id="battleBtn" onclick="startBattle()">BATTLE</div>
+                    <div id="fighterTwoStats">
+                        <div class="statInputSection">
+                            ATK <input id="fTwoAtk" class="statInput" type="number" onkeyup="restrictValue('fTwoAtk')" value="50">
+                        </div>
+                        <div class="statInputSection">
+                            DEF <input id="fTwoDef" class="statInput" type="number" onkeyup="restrictValue('fTwoDef')" value="30">
+                        </div>
+                        <div class="statInputSection">
+                            SPD <input id="fTwoSpd" class="statInput" type="number" onkeyup="restrictValue('fTwoSpd')" value="20">
+                        </div>
+                    </div>
+                </div>
+                <div id="battleField" class="flex">
+                    <div id="fighterOne" class="fighter flex">
+                        <span id="fighterOneHp">100</span>
+                    </div>
+                    <div id="fighterTwo" class="fighter flex">
+                        <span id="fighterTwoHp">100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- clock -->
+        <div class="panelSm blue">
+            <div id="clock" class="fullSize flex">
+                <div>
+                    <div id="hr">12</div>
+                    <div id="min">02</div>
+                    <div id="sec">36</div>
+                </div>
+                <div>
+                    <div id="dayTime">PM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- meditation app -->
+        <div class="panelSm blue">
+            <div id="meditationApp" class="fullSize flex">
+                <div></div>
+                <span id="meditationStart" class="redText" onclick="meditationStartBtn()">Start</span>
+                <div onclick="meditationStart()" id="meditationDirections" class="directionsSm displayNone flex">Breathe in when you see "UP" and breathe out when you see "Down". Click to start.</div>
+                <div id="breatheIn" class="displayNone redText"></div>
+                <div id="breatheOut" class="displayNone redText"></div>
+            </div>
+        </div>
+
+        <!-- tip calculator -->
+        <div class="panelMd blue">
+            <div id="tipCalculator" class="fullSize">
+                <p class="panelHeader">Don't forget to Tip!</p>
+                <div class="flexCol sizeWithHeader">
+                    <div class="flex">
+                        <input id="cost" class="smallInput" onkeyup="calculateTip()" onchange="calculateTip()" class="tipInput" type="number" placeholder="$00.00">
+                        <input id="tip" class="smallInput" onkeyup="calculateTip()" onchange="calculateTip()" class="tipInput" type="number" placeholder="tip%">
+                        <input id="numberOfPeople" class="smallInput" onkeyup="calculateTip()" onchange="calculateTip()" class="tipInput" type="number" placeholder="# of ppl">
+                    </div>
+                    <span id="splitAmountSection">Split per person: <span id="pay" class="redText"></span></span>
+                </div>
+            </div>
+        </div>
+
+         <!-- crud store -->
+         <div class="panelLarge grey">
+            <div class="fullSize">
+                <div id="storeHeader" class="flex">
+                    <p class="panelHeader">Crud Store</p>
+                    <input
+                        id="crudKey"
+                        type="text"
+                        placeholder="crud id"
+                        value="47d7915c7a424585bbb111a125fe4fef"
+                    >
+                </div>
+                <div class="flexCol sizeWithHeader">
+                    <div class="topBottomHalf flex">
+                        <div class="rightLeftHalf flexCol">
+                            <p id="productHelpText"></p>
+                            <div id="loadStore" class="btn flex" onclick="loadStore()">Load Store</div>
+                        </div>
+                        <div class="rightLeftHalf flex">
+                            <div id="itemSelection" class="fullSize flex displayNone">
+                                <div class="rightLeftHalf flexCol">
+                                    <div id="chips" class="itemSelect" onclick="choiceProduct('chips')"></div>
+                                    <div id="juice" class="itemSelect" onclick="choiceProduct('juice')"></div>
+                                </div>
+                                <div class="rightLeftHalf flexCol">
+                                    <div id="sandwich" class="itemSelect" onclick="choiceProduct('sandwich')"></div>
+                                    <div id="apple" class="itemSelect" onclick="choiceProduct('apple')"></div>
+                                </div>
+                            </div>
+                            <div id="setPriceContainer" class="fullSize flex displayNone">
+                                <div id="selectedProduct" class="itemSelect"></div>
+                                <div>
+                                    <input id="selectedPrice" type="number" placeholder="$0.00" class="smallInput">
+                                    <div class="btn" onclick="onAdd()">Add</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div id="pricedItems" class="topBottomHalf flex">
+                        <span class="redText">No items on shelf.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- breaking bad quotes -->
+        <div class="panelLarge">
+            <div id="breakingBadApp" class="fullSize">
+                <div id="breakingBadImg" class="fullSize"></div>
+                <div id="quote" onclick="getQuote()">
+                    <div id="quoteTextContainer">
+                        <span id="quoteText"></span>
+                        <div id="breakingBadAuthor"></div>
+                        <span id="breakBadClick" class="redText">NEXT QUOTE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Color Psychology -->
+        <div class="panelMd">
+            <div id="colorPsychology" class="flex fullSize">
+            </div>
+        </div>
+
+        <!-- pokedex -->
+        <div class="panelLarge">
+            <div id="pokedexApp" class="fullSize">
+                <input id="pokemonSearch" type="text" onkeyup="getPokemonInfo()" placeholder="Search Pokémon">
+                <div id="pokemonInfo" class="flexCol">
+                    <div id="pokemonStats" class="flex">
+                        <div class="statRow flexCol alignStart">
+                            <p><span id="pokemonName"></span> #<span id="pokemonId"></span></p>
+                            <p>Ht/Wt <span id="pokemonHeight"></span>/<span id="pokemonWeight"></span></p>
+                            <p>HP <span id="pokemonHp"></span></p>
+                        </div>
+                        <div class="statRow flexCol alignStart">
+                            <p>Type <span id="pokemonType"></span></p>
+                            <p>ATK <span id="pokemonAtk"></span></p>
+                            <p>DEF <span id="pokemonDef"></span></p>
+                        </div>
+                    </div>
+                    <a href="https://pokemondb.net/pokedex/national" target="_blank">pokemon reference here</a>
+                    <div id="pokemon"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- random jokes -->
+        <div class="panelMd blue">
+            <div id="jokeApp" class="flexCol" onclick="getNewJoke()">
+                <div id="joke">
+                    <span id="jokeText">Why couldn't the lifeguard save the hippie? He was too far out, man.</span>
+                    <span id="jokeClick" class="redText">NEXT JOKE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/util.js"></script>
+    <script src="./js/time.js"></script>
+    <script src="./js/tipCalculator.js"></script>
+    <script src="./js/color.js"></script>
+    <script src="./js/colorPsychology.js"></script>
+    <script src="./js/passwordGenerator.js"></script>
+    <script src="./js/quotes.js"></script>
+    <script src="./js/breakingBad.js"></script>
+    <script src="./js/meditation.js"></script>
+    <script src="./js/memory.js"></script>
+    <script src="./js/tictactoe.js"></script>
+    <script src="./js/whacAMole.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/inspirationalQuote.js"></script>
+    <script src="./js/jokes.js"></script>
+    <script src="./js/pokemon.js"></script>
+    <script src="./js/store.js"></script>
+    <script src="./js/oop.js"></script>
+    <script src="./js/oopHelper.js"></script>
+
+    <script src="./js/main.js"></script>
+    
+</body>
+</html>
