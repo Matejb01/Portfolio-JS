@@ -1,6 +1,6 @@
 # Portfolio-JS
 This is my portfolio which consists of 16 projects that I've done in the Udemy course "JavaScript Master Class for 2022 with HTML and CSS". 
-When you click on the "Show Projects" button you can see all the projects on the left, and those are: 
+When you click on the "Show Projects" button you can see all the projects on the right, and those are: 
 - Time App
 - Tip Calculator
 - Color Psychology
